@@ -1,3 +1,6 @@
+import Robot from "./components/Robot/Robot";
+import robotsData from "./Data/robotsData";
+
 function App() {
   return (
     <div className="main-container">
@@ -8,6 +11,8 @@ function App() {
         alt="Happy robot"
       ></img>
       <p>Site in progress</p>
+
+      <Robot robot={robotsData[0]} />
     </div>
   );
 }
