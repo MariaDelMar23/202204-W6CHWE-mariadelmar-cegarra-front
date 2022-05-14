@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 const StyledRobot = styled.div`
-  display: flex;
+  display: inline;
   flex-direction: row;
   align-items: center;
   border-radius: 7px;
