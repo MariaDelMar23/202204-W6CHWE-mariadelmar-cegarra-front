@@ -33,7 +33,7 @@ export const deleteRobotThunk = (id) => async (dispatch) => {
 
 export const addRobotThunk = (robot) => async (dispatch) => {
   try {
-    const { status } = await axios.post(urlApi);
+    const { status } = await axios.post(`${urlApi}/`, robot);
 
     if (status === 201) {
       dispatch(addRobotActionCreator(robot));

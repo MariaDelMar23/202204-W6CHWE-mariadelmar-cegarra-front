@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import styled from "styled-components";
+import Form from "../components/Form/Form";
 import RobotsList from "../components/RobotsList/RobotsList";
 import { loadRobotsThunk } from "../thunks/robotsThunks";
 
@@ -23,6 +24,7 @@ const RobotListPage = () => {
     <>
       <StyledHeading>Uncommon Robots</StyledHeading>
       <RobotsList />
+      <Form />
     </>
   );
 };
