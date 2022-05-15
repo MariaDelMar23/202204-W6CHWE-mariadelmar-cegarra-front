@@ -5,7 +5,6 @@ import {
 } from "../redux/features/robotsSlice";
 
 const urlApi = process.env.REACT_APP_URL_API;
-const apiKey = process.env.API_KEY;
 
 export const loadRobotsThunk = () => async (dispatch) => {
   try {

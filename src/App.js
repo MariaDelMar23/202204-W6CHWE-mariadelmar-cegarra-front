@@ -1,26 +1,17 @@
-import { useEffect } from "react";
-import { useDispatch } from "react-redux";
-import RobotsList from "./components/RobotsList/RobotsList";
-import { loadRobotsThunk } from "./thunks/robotsThunks";
+import { Navigate, Route, Routes } from "react-router-dom";
+import Navigation from "./components/Navigation/Navigation";
+import RobotListPage from "./pages/RobotListPage";
 
 function App() {
-  const dispatch = useDispatch();
-
-  useEffect(() => {
-    dispatch(loadRobotsThunk());
-  }, [dispatch]);
-
   return (
-    <div className="main-container">
-      <img
-        width="400px"
-        heigth="400px"
-        src="https://static.thenounproject.com/png/417113-200.png"
-        alt="Happy robot"
-      ></img>
-      <RobotsList />
-      <p>Site in progress</p>
-    </div>
+    <>
+      <Navigation />
+      <Routes>
+        <Route path="/" element={<Navigate to="/robots" />}></Route>
+        <Route path="/robots" element={<RobotListPage />}></Route>
+        <Route path="*" element={<RobotListPage />}></Route>
+      </Routes>
+    </>
   );
 }
 

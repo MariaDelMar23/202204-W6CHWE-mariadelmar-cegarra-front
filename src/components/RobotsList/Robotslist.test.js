@@ -16,18 +16,18 @@ describe("Given the RobotsList component", () => {
       expect(robotsList).toBeInTheDocument();
     });
 
-    test("Then it should have style", ()=> {
-      const expectedStyle=`
+    test("Then it should have style", () => {
+      const expectedStyle = `
       list-style: none;
-    `
-    render(
-      <Provider store={store}>
-        <RobotsList />
-      </Provider>
-    );
-    const robotsList = screen.getByRole("list");
+    `;
+      render(
+        <Provider store={store}>
+          <RobotsList />
+        </Provider>
+      );
+      const robotsList = screen.getByRole("list");
 
-    expect(robotsList).toHaveStyle(expectedStyle);
-    })
+      expect(robotsList).toHaveStyle(expectedStyle);
+    });
   });
 });
