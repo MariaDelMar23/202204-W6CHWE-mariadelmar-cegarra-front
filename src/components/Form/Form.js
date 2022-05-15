@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { addRobotThunk } from "../../thunks/robotsThunks";
+import StyledForm from "./StyledForm";
 
 const Form = () => {
   const [newName, setNewName] = useState("");
@@ -43,7 +44,7 @@ const Form = () => {
 
   return (
     <>
-      <form action="addRobot">
+      <StyledForm action="addRobot">
         <ul>
           <li>
             <label htmlFor="name">Name</label>
@@ -78,8 +79,13 @@ const Form = () => {
             />
           </li>
         </ul>
-        <input type="submit" value="ADD ROBOT" onClick={addRobot} />
-      </form>
+        <input
+          className="form-button"
+          type="submit"
+          value="ADD ROBOT"
+          onClick={addRobot}
+        />
+      </StyledForm>
     </>
   );
 };
