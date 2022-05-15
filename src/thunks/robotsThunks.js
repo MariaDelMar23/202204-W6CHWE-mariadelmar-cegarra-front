@@ -1,5 +1,6 @@
 import axios from "axios";
 import {
+  addRobotActionCreator,
   deleteRobotActionCreator,
   loadRobotsActionCreator,
 } from "../redux/features/robotsSlice";
@@ -24,6 +25,18 @@ export const deleteRobotThunk = (id) => async (dispatch) => {
 
     if (status === 200) {
       dispatch(deleteRobotActionCreator(id));
+    }
+  } catch (error) {
+    return error.message;
+  }
+};
+
+export const addRobotThunk = (robot) => async (dispatch) => {
+  try {
+    const { status } = await axios.post(urlApi);
+
+    if (status === 201) {
+      dispatch(addRobotActionCreator(robot));
     }
   } catch (error) {
     return error.message;
