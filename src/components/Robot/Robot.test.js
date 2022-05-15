@@ -2,7 +2,6 @@ import { render, screen } from "@testing-library/react";
 import { Provider } from "react-redux";
 import robotsData from "../../mocks/robotsMock";
 import store from "../../redux/store/store";
-
 import Robot from "./Robot";
 
 describe("Given the Robot component", () => {
