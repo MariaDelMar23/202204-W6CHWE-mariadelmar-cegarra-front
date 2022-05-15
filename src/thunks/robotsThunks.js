@@ -21,7 +21,7 @@ export const loadRobotsThunk = () => async (dispatch) => {
 
 export const deleteRobotThunk = (id) => async (dispatch) => {
   try {
-    const { status } = await axios.delete(urlApi + id);
+    const { status } = await axios.delete(`${urlApi}/${id}`);
 
     if (status === 200) {
       dispatch(deleteRobotActionCreator(id));
