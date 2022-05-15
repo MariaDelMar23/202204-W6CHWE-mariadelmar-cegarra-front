@@ -1,7 +1,7 @@
 const robotsData = {
   robots: [
     {
-      id: "62801606fcfc53c9f6c3a600",
+      _id: "62801606fcfc53c9f6c3a600",
       name: "Mark Zuckeberg",
       features: {
         speed: 2,
@@ -12,7 +12,7 @@ const robotsData = {
         "https://i0.wp.com/wipy.tv/wp-content/uploads/2018/04/weqweqweqweqw.jpg?fit=1000%2C600&ssl=1",
     },
     {
-      id: "62801783fcfc53c9f6c3a601",
+      _id: "62801783fcfc53c9f6c3a601",
       name: "2B",
       features: {
         speed: 8,

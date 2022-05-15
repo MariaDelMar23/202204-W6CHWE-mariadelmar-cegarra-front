@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import { useDispatch } from "react-redux";
+import RobotsList from "./components/RobotsList/RobotsList";
 import { loadRobotsThunk } from "./thunks/robotsThunks";
 
 function App() {
@@ -17,6 +18,7 @@ function App() {
         src="https://static.thenounproject.com/png/417113-200.png"
         alt="Happy robot"
       ></img>
+      <RobotsList />
       <p>Site in progress</p>
     </div>
   );
