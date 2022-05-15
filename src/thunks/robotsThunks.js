@@ -1,7 +1,11 @@
 import axios from "axios";
-import { loadRobotsActionCreator } from "../redux/features/robotsSlice";
+import {
+  deleteRobotActionCreator,
+  loadRobotsActionCreator,
+} from "../redux/features/robotsSlice";
 
 const urlApi = process.env.REACT_APP_URL_API;
+const apiKey = process.env.API_KEY;
 
 export const loadRobotsThunk = () => async (dispatch) => {
   try {
@@ -15,4 +19,14 @@ export const loadRobotsThunk = () => async (dispatch) => {
   }
 };
 
-export const a = 3;
+export const deleteRobotThunk = (id) => async (dispatch) => {
+  try {
+    const { status } = await axios.delete(urlApi + id);
+
+    if (status === 200) {
+      dispatch(deleteRobotActionCreator(id));
+    }
+  } catch (error) {
+    return error.message;
+  }
+};
