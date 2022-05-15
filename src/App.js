@@ -1,7 +1,17 @@
-import Robot from "./components/Robot/Robot";
-import robotsData from "./Data/robotsData";
+import { useEffect } from "react";
+import { useDispatch } from "react-redux";
+import RobotsList from "./components/RobotsList/RobotsList";
+import { loadRobotsThunk } from "./thunks/robotsThunks";
 
 function App() {
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    debugger;
+    dispatch(loadRobotsThunk());
+    debugger;
+  }, [dispatch]);
+
   return (
     <div className="main-container">
       <img
@@ -11,8 +21,7 @@ function App() {
         alt="Happy robot"
       ></img>
       <p>Site in progress</p>
-
-      <Robot robot={robotsData[0]} />
+      <RobotsList />
     </div>
   );
 }

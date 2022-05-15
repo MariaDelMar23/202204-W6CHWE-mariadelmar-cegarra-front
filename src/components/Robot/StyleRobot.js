@@ -2,6 +2,7 @@ import styled from "styled-components";
 
 const StyledRobot = styled.div`
   display: inline;
+  display: block;
   flex-direction: row;
   align-items: center;
   border-radius: 7px;
