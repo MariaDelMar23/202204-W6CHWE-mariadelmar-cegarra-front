@@ -4,7 +4,7 @@ const robotsSlice = createSlice({
   name: "robots",
   initialState: [],
   reducers: {
-    loadRobots: (robots, action) => [...robots, ...action.payload],
+    loadRobots: (robots, action) => [...action.payload],
   },
 });
 
