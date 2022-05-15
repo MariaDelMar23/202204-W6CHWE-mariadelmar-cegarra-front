@@ -1,5 +1,6 @@
 import { render, screen } from "@testing-library/react";
-import robotsData from "../../Data/robotsData";
+import robotsData from "../../mocks/robotsMock";
+
 import Robot from "./Robot";
 
 describe("Given the Robot component", () => {
@@ -11,7 +12,7 @@ describe("Given the Robot component", () => {
       font-weight: bold;
       color: #1f193a;`;
 
-      render(<Robot robot={robotsData[0]} />);
+      render(<Robot robot={robotsData.robots[0]} />);
       const heading = screen.getByRole("heading", { name: expectedHeading });
 
       expect(heading).toBeInTheDocument();
@@ -23,7 +24,7 @@ describe("Given the Robot component", () => {
       const expectedStyle = `margin: 30px;
       border-radius: 7px;`;
 
-      render(<Robot robot={robotsData[0]} />);
+      render(<Robot robot={robotsData.robots[0]} />);
       const image = screen.getByRole("img", { name: expectedAlt });
 
       expect(image).toBeInTheDocument();
