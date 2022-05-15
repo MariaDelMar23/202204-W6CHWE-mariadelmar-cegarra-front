@@ -1,4 +1,5 @@
 import { Navigate, Route, Routes } from "react-router-dom";
+import Form from "./components/Form/Form";
 import Navigation from "./components/Navigation/Navigation";
 import RobotListPage from "./pages/RobotListPage";
 
