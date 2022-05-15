@@ -41,7 +41,7 @@ const StyledRobot = styled.div`
     color: #1f193a;
   }
   p {
-    font-size: 30px;
+    font-size: 25px;
     color: #1f193a;
   }
   button {
