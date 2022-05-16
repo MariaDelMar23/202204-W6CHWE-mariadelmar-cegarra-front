@@ -58,11 +58,21 @@ const Form = () => {
         <ul>
           <li>
             <label htmlFor="name">Name</label>
-            <input id="name" type="text" onChange={changeNewName} />
+            <input
+              id="name"
+              type="text"
+              onChange={changeNewName}
+              autoComplete="off"
+            />
           </li>
           <li>
             <label htmlFor="image">Image (URL)</label>
-            <input id="image" type="text" onChange={changeNewImage} />
+            <input
+              id="image"
+              type="text"
+              onChange={changeNewImage}
+              autoComplete="off"
+            />
           </li>
           <li>
             <label htmlFor="features-speed">Speed</label>
@@ -70,6 +80,9 @@ const Form = () => {
               id="features-speed"
               type="number"
               onChange={changeNewSpeed}
+              autoComplete="off"
+              min={0}
+              max={10}
             />
           </li>
           <li>
@@ -78,6 +91,9 @@ const Form = () => {
               id="features-strength"
               type="number"
               onChange={changeNewStrength}
+              autoComplete="off"
+              min={0}
+              max={10}
             />
           </li>
           <li>
@@ -86,6 +102,8 @@ const Form = () => {
               id="features-dateOfCreation"
               type="date"
               onChange={changeNewDateOfCreation}
+              autoComplete="off"
+              max={new Date().toISOString().split("T")[0]}
             />
           </li>
         </ul>
