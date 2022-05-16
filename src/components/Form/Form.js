@@ -27,6 +27,14 @@ const Form = () => {
     setNewdateOfCreation(event.target.value);
   };
 
+  const clearForm = (event) => {
+    setNewName("");
+    setNewImage("");
+    setNewSpeed(0);
+    setNewStrength(0);
+    setNewdateOfCreation(new Date(0));
+  };
+
   const addRobot = (event) => {
     event.preventDefault();
     dispatch(
@@ -40,6 +48,8 @@ const Form = () => {
         },
       })
     );
+    clearForm();
+    window.location.href = "/robots";
   };
 
   return (
