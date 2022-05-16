@@ -10,6 +10,7 @@ const Robot = ({
     image,
     features: { speed, strength, dateOfCreation },
   },
+  detail,
 }) => {
   const dispatch = useDispatch();
 
@@ -17,9 +18,16 @@ const Robot = ({
     dispatch(deleteRobotThunk(_id));
   };
 
+  const redirectDetails = () => {
+    window.location.href = `/robots/${_id}`;
+  };
+
   return (
     <StyledRobot className="robot">
       <StyledButton onClick={deleteRobot}>DELETE</StyledButton>
+      {!detail && (
+        <StyledButton onClick={redirectDetails}>MORE INFO</StyledButton>
+      )}
       <h3 className="robot__title">{name}</h3>
       <div className="robot-info">
         <div className="image">
@@ -36,6 +44,13 @@ const Robot = ({
           <p>Strength: {strength}</p>
           <p>Date of creation: {dateOfCreation.split("T")[0]}</p>
         </div>
+        {detail && (
+          <p>
+            The {name} robot was born in {dateOfCreation.split("T")[0]}. Has a
+            speed of {speed} and a strength of {strength}, both out of 10
+            points.
+          </p>
+        )}
       </div>
     </StyledRobot>
   );

@@ -2,6 +2,7 @@ import axios from "axios";
 import {
   addRobotActionCreator,
   deleteRobotActionCreator,
+  loadOneRobotActionCreator,
   loadRobotsActionCreator,
 } from "../redux/features/robotsSlice";
 
@@ -19,9 +20,21 @@ export const loadRobotsThunk = () => async (dispatch) => {
   }
 };
 
+export const loadOneRobotThunk = (id) => async (dispatch) => {
+  try {
+    const { data: robot, status } = await axios.get(`${urlApi}/${id}`);
+
+    if (status === 200) {
+      dispatch(loadOneRobotActionCreator(robot));
+    }
+  } catch (error) {
+    return error.message;
+  }
+};
+
 export const deleteRobotThunk = (id) => async (dispatch) => {
   try {
-    const { status } = await axios.delete(`${urlApi}/${id}`);
+    const { status } = await axios.delete(`${urlApi}/delete/${id}`);
 
     if (status === 200) {
       dispatch(deleteRobotActionCreator(id));
@@ -33,7 +46,7 @@ export const deleteRobotThunk = (id) => async (dispatch) => {
 
 export const addRobotThunk = (robot) => async (dispatch) => {
   try {
-    const { status } = await axios.post(`${urlApi}/`, robot);
+    const { status } = await axios.post(`${urlApi}/create`, robot);
 
     if (status === 201) {
       dispatch(addRobotActionCreator(robot));
